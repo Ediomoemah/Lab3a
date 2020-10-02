@@ -2,25 +2,43 @@ import java.util.*;
 
 public class AddressBook {
 
-    private List addressBook;
+    private List<BuddyInfo> addressBook;
 
+    /**
+     * Create an addressBook of type ArrayList
+     */
     public AddressBook() {
-        addressBook = new ArrayList();
+        addressBook = new ArrayList<BuddyInfo>();
     }
 
+    /**
+     * Add a BuddyInfo object to an addressBook of type
+     * ArrayList
+     * @param buddy The BuddyInfo object
+     */
     public void addBuddy(BuddyInfo buddy){
-        addressBook.add(buddy);
+        if (buddy != null){
+            addressBook.add(buddy);
+        }
     }
 
-    public void removeBuddy(BuddyInfo buddy){
-        addressBook.remove(buddy);
+    /**
+     * Remove a BuddyInfo object from the addressbook at an index
+     * position
+     * @param index The position of the BuddyInfo object
+     */
+    public BuddyInfo removeBuddy(int index){
+        if (index >= 0 && index < addressBook.size()){
+            return addressBook.remove(index);
+        }
+        return null;
     }
 
     public static void main(String[] args) {
-        BuddyInfo buddy = new BuddyInfo("Eddie", "Carleton", "613");
+        BuddyInfo buddy = new BuddyInfo("Eddie", "Carleton", "647");
         AddressBook addressBook = new AddressBook();
         addressBook.addBuddy(buddy);
-        addressBook.removeBuddy(buddy);
+        addressBook.removeBuddy(0);
     }
 
 
