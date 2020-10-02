@@ -34,6 +34,10 @@ public class AddressBook {
         return null;
     }
 
+    public void printBranch(){
+        System.out.println(("new branch"));
+    }
+
     public static void main(String[] args) {
         BuddyInfo buddy = new BuddyInfo("Eddie", "Carleton", "613");
         AddressBook addressBook = new AddressBook();
